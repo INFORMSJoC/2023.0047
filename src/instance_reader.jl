@@ -369,7 +369,7 @@ function read_SSL!( inst::instance, params::Dict )
 	end
 
     ssl_fname = "SSL-LOG_BEN_" * inst.ifile * "_k=" * mykL * "_m=5_r=0.5_w=100"     #this is the setting used in the paper
-    fname = joinpath(params["root_path"], "data", "leader_seed_sets", ssl_fname)
+    fname = joinpath(params["root_path"], "data", "leaderseedsets", ssl_fname)
 
     println("from: ", fname)
 
