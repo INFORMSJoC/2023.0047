@@ -37,7 +37,7 @@ println("start script")
 
 #set path and filename
 rootpath = dirname(dirname(dirname(@__FILE__)))
-path = resultpath = joinpath(rootpath, "results", "raw_data")
+path = resultpath = joinpath(rootpath, "results", "rawdata")
 #imp
 rtype == "ANAL_IMP"                     ? file = "20200822_IMP_RX.csv" : nothing
 rtype == "ANAL_OA_VS_BEN"               ? file = "20210113_OA_BEN_w100.csv" : nothing
