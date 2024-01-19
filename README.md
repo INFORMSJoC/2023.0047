@@ -57,7 +57,7 @@ See `params.jl` for a description of the parameters and other available paramete
 The results are written in csv format in the [results](folder/) folder. Each run two files are written. The first one contains the headlines of for the data in the second one. 
 
 ### Usage (evaluation)
-The number of experiments we conducted evolved over time. Thus there exist several different raw data result files in [results/rawdata](results/raw_data/). To excecute a specific analyses choose one of the (commented) types in file `analyze_results.jl`. For instance, `rtype = "ANAL_IMP"` analyizes IMP variants (see the presice description next to the available types). 
+The number of experiments we conducted evolved over time. Thus, there exist several different raw data result files in [results/rawdata](results/raw_data/). To excecute a specific analyses choose one of the (commented) types in file `analyze_results.jl`. For instance, `rtype = "ANAL_IMP"` analyizes IMP variants (see the presice description next to the available types). 
 
 ## Data
 The [data](data/) folder contains three subfolders:
