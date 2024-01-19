@@ -44,7 +44,7 @@ All codes are written in Julia 1.4, and tested on Ubuntu 18.04 (and Julia 1.1 an
 - IBM CPLEX 12.9 or 12.10. Newer versions will not work because they are not supported by `CPLEX.jl v0.6.6` which is used in the code. Moreover, legacy callbacks are implmented (not the newer generic ones).
 
 ### Requirements (evaluation)
-- a set up `Python` environment for use with `PyCall` and `PyPlot`
+- A set up `Python` environment for use with `PyCall` and `PyPlot`
 - Python packages: `matplotlib 3.3.4`, `seaborn 0.11.1`, `numpy 1.20.2`, and `tikzplotlib 0.9.8`. Newer versions of the latter packages might work, but are not tested.
 
 ### Usage (main code)
