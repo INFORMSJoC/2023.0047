@@ -40,7 +40,7 @@ Below is the BibTex for citing this snapshot of the respoitory.
 All codes are written in Julia 1.4, and tested on Ubuntu 18.04 (and Julia 1.1 and 1.4). The used packages and dependencies are provided in the files `Project.toml` and `Manifest.toml` in the [src](src/) folder (where the main code is located). The code for data evaluation is located in the [src/evaluation](src/evaluation/) folder (where all scripts for evaluation are located). Note: deleting `Manifest.toml` and re-creating one with `Pkg.instantiate()` may lead to strange results.
 
 ### Requirements (main code)
-- A UNIX-based machine (tested on Ubuntu 18.04), because the code accesses the file `/proc/self/stat` to keep track of the used memory during the optimization procedure. 
+- A UNIX-based machine, because the code accesses the file `/proc/self/stat` to keep track of the used memory during the optimization procedure. 
 - IBM CPLEX 12.9 or 12.10. Newer versions will not work because they are not supported by `CPLEX.jl v0.6.6` which is used in the code. Moreover, legacy callbacks are implmented (not the newer generic ones).
 
 ### Requirements (evaluation)
