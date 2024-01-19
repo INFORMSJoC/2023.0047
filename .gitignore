@@ -19,3 +19,4 @@ docs/site/
 
 # ignore results folder
 results/
+src/evaluation/plots/
