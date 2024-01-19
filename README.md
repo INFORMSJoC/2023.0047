@@ -18,7 +18,7 @@ reported on in the paper: Kahr Michael, Leitner Markus, Ljubic Ivana. The impact
 
 
 
-**Important: This repository will not receive any updates. Moreover, the code provided here is unlikely to work on newer machines because it uses outdated Julia package and CPLEX versions (see subsection Requirements below). An updated version (and potential future updates) can be found here:
+**Important: This repository will not receive any updates. Moreover, the provided code is unlikely to work on machines with up-to-date software, because it uses outdated Julia packages and CPLEX versions (see the requirements below). An updated version (and potential future updates) can be found here:
 https://github.com/m-kahr/mnlcimp**.
 
 ## Cite
@@ -44,11 +44,11 @@ Below is the BibTex for citing this snapshot of the respoitory.
 
 ## Sources Codes
 
-All codes are written in Julia 1.4, and tested on Ubuntu 18.04 (and Julia 1.1 and 1.4). The used packages and dependencies are provided in the file `Project.toml` in the [src](src/) folder (where the main code is located). The code for data evaluation is located in the [src/evaluation](src/evaluation/) folder (where all scripts for evaluation are located).
+All codes are written in Julia 1.4, and tested on Ubuntu 18.04 (and Julia 1.1 and 1.4). The used packages and dependencies are provided in the files `Project.toml` and `Manifest.toml` in the [src](src/) folder (where the main code is located). The code for data evaluation is located in the [src/evaluation](src/evaluation/) folder (where all scripts for evaluation are located). Note: deleting `Manifest.toml` and re-creating one with `Pkg.instantiate()` may lead to strange results.
 
 ### Requirements (main code)
-- A UNIX-based machine, because the code accesses the file `/proc/self/stat` to keep track of the used memory during the optimization procedure. 
-- IBM CPLEX 12.9 or 12.10. Newer versions will not work because they are not supported by `CPLEX.jl v0.6.6` which is used in the code. Moreover, legacy callbacks are implmented (not the generic ones).
+- A UNIX-based machine (tested on Ubuntu 18.04), because the code accesses the file `/proc/self/stat` to keep track of the used memory during the optimization procedure. 
+- IBM CPLEX 12.9 or 12.10. Newer versions will not work because they are not supported by `CPLEX.jl v0.6.6` which is used in the code. Moreover, legacy callbacks are implmented (not the newer generic ones).
 
 ### Requirements (evaluation)
 - a set up `Python` environment for use with `PyCall` and `PyPlot`
@@ -70,7 +70,8 @@ The number of experiments we conducted evolved over time. Thus there exist sever
 The [data](data/) folder contains three subfolders:
 
 ### edgestats
-This folder contains the file `tw-inststatsedge_rt_by_ot.csv` from which forwarding probabilities (extracted from twitter data) are sampled when instance graphs from the literature are used, namely `msg-college.im`, `msg-email-eu.im`,`soc-advogato.im`, and `soc-anybeat.im`.
+This folder contains two files `test_probabilities.csv` and `tw-inststatsedge_rt_by_ot.zip`. They contain forwarding probabilities (extracted from twitter data) which are sampled when instance graphs from the literature are used, namely `msg-college.im`, `msg-email-eu.im`,`soc-advogato.im`, and `soc-anybeat.im`. To use the probabilities used in the paper, unzip `tw-inststatsedge_rt_by_ot.zip`, and uncomment line 81 in the file `instance_reader.jl`. Note that `test_probabilities.csv` contains a randomly chosen subset of `tw-inststatsedge_rt_by_ot.csv`.
+
 
 ### instances
 This folder contains three types of instances:
@@ -101,12 +102,13 @@ This folder contains leader seed sets computed with all studied different method
 
 ## Results
 
-The [results](results/) contains the raw results from our computational experiments, and the plots we derived from the latter data and which are used in the paper. The raw results are used in the [src/evaluation](src/evaluation/) scripts.
+The [results](results/) contains the raw results from our computational experiments, and the plots we derived from the latter data and which are used in the paper. The raw results are used in the [src/evaluation](src/evaluation/) scripts. One result file is too large for GitHub, thus, it is packed into zip archive in folder [results/rawdata](results/rawdata). Unzip it into the latter folder if needed.
 
 
 ## Scripts
 
 Folder [scripts](scripts/) contains bash scripts we used to start our computational experiments on a high-performance cluster via `qsub`.
+
 
 
 
